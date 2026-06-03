@@ -1,15 +1,11 @@
-import { clerkClient } from '@clerk/express';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
+import dotenv from "dotenv";
+dotenv.config({ quiet: true });
 
 export const ENV = {
-    PORT: process.env.PORT,
-    DATABASE_URL: process.env.DB_URL,
-    NODE_ENV: process.env.NODE_ENV,
-    FRONTEND_URL: process.env.FRONTEND_URL,
-    CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
-    CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
-}
+  PORT: process.env.PORT || 3000,
+  DATABASE_URL: process.env.DB_URL,
+  NODE_ENV: process.env.NODE_ENV || "development",
+  FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:5173",
+  CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
+  CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+};
